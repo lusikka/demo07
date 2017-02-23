@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="EmployeeApplication.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EmployeeApplication"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Width="800" Height="600">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!-- left column-->
+        <StackPanel Grid.Column="0" Margin="10,10">
+            <TextBlock Text="Employee information:" Margin="0,0,0,10"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Name:" Width="105"/>
+                <TextBox x:Name="nameTextbox" Width="160"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Email:" Width="105"/>
+                <TextBox x:Name="emailTextbox" Width="160"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,5">
+                <TextBlock Text="Password:" Width="105"/>
+                <PasswordBox x:Name="passTextbox" Width="160"/>
+            </StackPanel>
+            <TextBlock Text="User level:" Margin="0,10,0,10"/>
+            <!-- user level-->
+            <StackPanel Orientation="Horizontal">
+                <CheckBox x:Name="normalCheck" Content="Normal User" IsChecked="true"/>
+                <CheckBox x:Name="adminCheck" Content="Admin User" IsChecked="false"/>
+            </StackPanel>
+            <Button Name="saveButton" Content="Save" Margin="0,20"
+                    Click="saveButton_Click_1"/>
+        </StackPanel>
+        <!-- right column-->
+        <StackPanel Grid.Column="1" Margin="10,10">
+            <TextBlock Text="Image:"/>
+            <Image Source="Assets/matthews.jpg" Height="100" Width="70"/>
+            <Button Content="Browse" Margin="0,20"/>
+
+        </StackPanel>
+    </Grid>
+</Page>
